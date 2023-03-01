@@ -33,7 +33,7 @@
 <footer class="footer">
   <img src="../src/assets/STZH_SEB_Logo.png" alt="">
   <img src="../src/assets/Opportunity.png" alt="">
-  <img src="./assets/STZH_SEB_Logo.png" alt="">
+  <img src="../src/assets/SAG_Logo_De.png" alt="">
 </footer>
 </template>
 
@@ -71,6 +71,8 @@ color: #323D4A;
 
 body{
   background-color: #E8EFF4;
+  max-height: 120rem;
+  max-width: 63.75rem;
 }
 
 #date {
@@ -123,7 +125,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   background: #FFF;
 }
 
-.footer img {
+.footer,img {
   height:50px;
 }
 </style>
