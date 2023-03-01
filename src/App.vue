@@ -15,7 +15,7 @@
         <h3 class="Tims">ZeitPlan</h3>
         <h3 class="Task">Title</h3>
         <p class="Task">Task</p>
-      </div>
+        </div>
       </dd>
       <dd>
         <h3 class="Tims">ZeitPlan</h3>
@@ -91,7 +91,7 @@ color: #9AA7B1;
 }
 
 .menu dd {
-width: 86.5%;
+width: 90%;
 height: 8.6%;
 top: 20%;
 left: 5%;
