@@ -1,34 +1,24 @@
 <template>
-  <header>
-    <div>
+    <div id="app">
       <h1>{{ title }}</h1>
-    </div>
-    <div>
-      <span id="date">{{ currentDate() }}</span>
-    </div>
-  </header>
-  <div class="row">
-    <div class="menu">
-      <ul v-if="entries && entries.length">
-        <li v-for="entry in entries" :key="entry.id">
+        <span id="date">{{ currentDate() }}</span>
+        <ul class="menu" v-if="entries && entries.length">
+        <dd v-for="entry in entries" :key="entry.id">
           <span class="Tims">{{ entry[0] }} Uhr,{{ entry[1].replaceAll("/",".")}}</span>
           <h3 class="Task">{{ entry[2] }}</h3>
-          <span class="Task">{{ entry[3] }}</span>
-        </li>
+          <span class="last">{{ entry[3] }}</span>
+        </dd>
       </ul>
-      <h1 class="warn" v-else>No Events at the Time available!! </h1>
-    </div>
-  </div>
+      <h1 v-else>No Events at the Time available!! </h1>
   <footer class="footer">
     <img src="./assets/STZH_SEB_Logo.png" alt="">
     <img src="./assets/Opportunity.png" alt="">
     <img src="./assets/SAG_Logo_De.png" alt="">
   </footer>
+  </div>
 </template>
-
 <script>
 import axios from "axios";
-
 export default {
   name: "App",
   data() {
@@ -50,7 +40,6 @@ export default {
       const date = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
       return date;
     },
-
     /* getData() {
 
       this.entries = [
@@ -74,60 +63,52 @@ export default {
   },
 };
 </script>
-
-
 <style>
 @import url('https://https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22');
-
-* {
+#app {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-}
+ }
 
-.warn {
-  top:40%;
-}
+
 
 h1 {
   position: absolute;
-  top: 0%;
-  max-width: 70%;
-  height: 4%;
-  left: 5%;
+  left: 8%;
   font-style: normal;
   font-weight: 900;
-  font-size: 400%;
+  font-size: 300%;
   line-height: 75px; 
   color: #323D4A;
 }
 
 body {
   background-color: #E8EFF4;
-
+  /* width: 1080px; */
+  /* height:1920px; */
+  /* display: list-item; */
 }
 
 #date {
   position: absolute;
-  width: 31%;
-  min-height: 4%;
-  left: 5%;
-  top: 5%;
-  margin-top: 5%;
+  top:10%;
+  left: 8%;
   font-style: normal;
   font-weight: 500;
-  font-size: 400%;
+  font-size: 300%;
   line-height: 20%;
   color: #9AA7B1;
 }
 
 .menu {
-  margin-top: 20%;
-  width: 95%;
-  right: 5%;
+  position: absolute;
+  top:15%;
+  display: flexbox;
+  width: 88%;
 }
 
-li {
-  height: 8.6%;
-  top: 20%;
+dd {
+/*   top: 20%; */
+  padding:2.5%;
   margin-top: 5%;
   background-color: #0F05A0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -137,17 +118,24 @@ li {
   color: #EB5E00;
   font-size: 200%;
   margin-left: 2%;
-  line-height: 2%;
+  margin-top: 3%;
   text-justify: auto;
-
+  font-weight: bolder;
 }
 
 .Task {
   color: #FFBFAB;
   font-size: 200%;
   margin-left: 2%;
-  line-height: 2%;
-
+  margin-top: 0%;
+  font-weight: bold;
+}
+.last {
+  color: #FFBFAB;
+  font-size: 200%;
+  margin-left: 2%;
+  margin-top: 0%;
+  
 }
 
 .footer {
@@ -159,6 +147,7 @@ li {
   width: 100%;
   padding: 40px;
   background: #FFF;
+
 }
 
 .footer img {
