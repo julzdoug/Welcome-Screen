@@ -67,6 +67,7 @@ export default {
 @import url('https://https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22');
 #app {
   font-family: "Inter", Arial, Helvetica, sans-serif;
+  
  }
 
 
@@ -76,7 +77,7 @@ h1 {
   left: 8%;
   font-style: normal;
   font-weight: 900;
-  font-size: 300%;
+  font-size: 400%;
   line-height: 75px; 
   color: #323D4A;
 }
@@ -90,52 +91,49 @@ body {
 
 #date {
   position: absolute;
-  top:10%;
+  top:9%;
   left: 8%;
   font-style: normal;
   font-weight: 500;
-  font-size: 300%;
+  font-size: 400%;
   line-height: 20%;
   color: #9AA7B1;
 }
 
 .menu {
   position: absolute;
-  top:15%;
+  top:10%;
   display: flexbox;
   width: 88%;
+  line-height: 3%;
 }
 
 dd {
 /*   top: 20%; */
-  padding:2.5%;
+  padding:5%;
   margin-top: 5%;
   background-color: #0F05A0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
+  list-style: none;
+  }
 
 .Tims {
   color: #EB5E00;
   font-size: 200%;
-  margin-left: 2%;
-  margin-top: 3%;
   text-justify: auto;
   font-weight: bolder;
+  
 }
 
 .Task {
   color: #FFBFAB;
   font-size: 200%;
-  margin-left: 2%;
-  margin-top: 0%;
   font-weight: bold;
 }
 .last {
   color: #FFBFAB;
   font-size: 200%;
-  margin-left: 2%;
-  margin-top: 0%;
-  
+  line-height: 1.3;
+margin-bottom: 5%;
 }
 
 .footer {
