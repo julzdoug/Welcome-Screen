@@ -67,7 +67,7 @@ export default {
 @import url('https://https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap');
 #app {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  -wbebkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin:30px;
  }
