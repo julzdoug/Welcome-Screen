@@ -1,10 +1,7 @@
 <template>
     <div id="app">
-        
-      <h1>{{ title }}</h1>
+        <h1>{{ title }}</h1>
         <h2 id="date">{{ currentDate() }}</h2>
-        <div class="container">
-      <div class="row">
         <ul class="menu" v-if="entries && entries.length">
         <dd v-for="entry in entries" :key="entry.id">
           <span class="Tims">{{ entry[0] }} Uhr,{{ entry[1].replaceAll("/",".")}}</span>
@@ -18,8 +15,6 @@
     <img src="./assets/Opportunity.png" alt="">
     <img src="./assets/SAG_Logo_De.png" alt="">
   </footer>
-  </div>
-</div>
 </div>
 </template>
 <script>
@@ -29,8 +24,8 @@ export default {
   data() {
     return {
       title: "Welcome to Opportunity",
-      sheet_id: "1CR1UKN0LAPNs6lWbfA2gBI2FazmWdVSFIzIwi5TG5Z4",
-      api_token: "AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU",
+      sheet_id: "1CT_zjJp_4Sn3JKka9Gn8BihLO3Nr2XY2dLPF7mVkd0I",
+      api_token: /* "AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU", */ "AIzaSyBI2CyG50sW8iIPd1RdpsrVA_ShJ8Ox-Rg",
       entries: [],
     };
   },
@@ -72,75 +67,56 @@ export default {
 @import url('https://https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap');
 #app {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  
+  -wbebkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin:30px;
  }
 
 
-
 h1 {
-  position: absolute;
-  left: 8%;
   font-style: normal;
   font-weight: 900;
-  font-size: 400%;
-  line-height: 75px; 
+  font-size: 62px;
   color: #323D4A;
 }
-
 body {
   background-color: #E8EFF4;
-  /* width: 1080px; */
-  /* height:1920px; */
-  /* display: list-item; */
 }
-
 #date {
-  position: absolute;
-  top:9%;
-  left: 8%;
   font-style: normal;
   font-weight: 500;
-  font-size: 400%;
-  line-height: 20%;
-  color: #9AA7B1;
+  font-size: 62px;
+   color: #9AA7B1;
+   margin: 0;
 }
-
 .menu {
-  position: absolute;
-  top:10%;
-  display: flexbox;
-  width: 88%;
-  line-height: 3%;
+padding: 0;
 }
-
 dd {
 /*   top: 20%; */
-  padding:5%;
-  margin-top: 5%;
+  padding: 35px 40px;
+  margin:40px 0;
   background-color: #0F05A0;
   list-style: none;
+  line-height: 1.3;
+  font-size: 28px;
   }
 
 .Tims {
   color: #EB5E00;
-  font-size: 200%;
-  text-justify: auto;
-  font-weight: bolder;
+  font-weight: 900;
   
 }
-
 .Task {
+  font-size: inherit;
+  margin:0;
   color: #FFBFAB;
-  font-size: 200%;
-  font-weight: bold;
+  font-weight: 900;
 }
 .last {
   color: #FFBFAB;
-  font-size: 200%;
-  line-height: 1.3;
-margin-bottom: 5%;
-}
 
+}
 .footer {
   display: flex;
   justify-content: space-between;
@@ -153,6 +129,10 @@ margin-bottom: 5%;
 
 }
 
+
 .footer img {
   height: 50px;
-}</style>
+}
+
+
+</style>
