@@ -1,7 +1,10 @@
 <template>
     <div id="app">
+        
       <h1>{{ title }}</h1>
-        <span id="date">{{ currentDate() }}</span>
+        <h2 id="date">{{ currentDate() }}</h2>
+        <div class="container">
+      <div class="row">
         <ul class="menu" v-if="entries && entries.length">
         <dd v-for="entry in entries" :key="entry.id">
           <span class="Tims">{{ entry[0] }} Uhr,{{ entry[1].replaceAll("/",".")}}</span>
@@ -16,6 +19,8 @@
     <img src="./assets/SAG_Logo_De.png" alt="">
   </footer>
   </div>
+</div>
+</div>
 </template>
 <script>
 import axios from "axios";
@@ -64,7 +69,7 @@ export default {
 };
 </script>
 <style>
-@import url('https://https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap%22');
+@import url('https://https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap');
 #app {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   
