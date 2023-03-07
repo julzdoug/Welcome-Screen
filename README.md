@@ -1,3 +1,9 @@
+Links:
+Gsheet:google sheet Link:https://docs.google.com/spreadsheets/d/1CT_zjJp_4Sn3JKka9Gn8BihLO3Nr2XY2dLPF7mVkd0I/edit#gid=0
+Github:https://github.com/julzdoug/Welcome-Screen
+Netlify:https://welcomescreenjules.netlify.app
+
+
 1. Create the Folder WelcomScreen
 2. Created a new VueJS Project sudo npm install -g @vue/cli
     Link:https://cli.vuejs.org/#getting-started
@@ -27,3 +33,4 @@ Chris Injection work on the app and create the design according to Figma
     link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 22. added a media query for large width tha 1080px so that the last entry is fully visible
+ 
