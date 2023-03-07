@@ -8,7 +8,7 @@
     <!--Importing the Data of the google sheet in certain order line 36&37-->
     <ul class="menu" v-if="entries && entries.length">
       <dd v-for="entry in entries" :key="entry.id">
-        <span class="Tims">{{ entry[0] }} Uhr,{{ entry[1].replaceAll("/", ".") }}</span>
+        <span class="Tims">{{ entry[0] }} Uhr , {{ entry[1].replaceAll("/", ".") }}</span>
         <h3 class="Task">{{ entry[2] }}</h3>
         <span class="last">{{ entry[3] }}</span>
       </dd>
@@ -47,18 +47,26 @@ export default {
       const date = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
       return date;
     },
-    /* exaple to test the array
+/* This filter the data of the google Sheets per date and remove the row past the current date*/
     getData() {
-      this.entries = [
-        ["17:08", "08/09/2023", "abschlussfeier", "erfolgreich vorbei!!"],
-        ["08:08", "17/09/2023", "aufräumen", "Bitte alle Helfen"],
-      ];
-    }, */
-    getData() {
-      axios.get(this.gsheet_url).then((response) => {
-        this.entries = response.data.valueRanges[0].values;
-      });
-    },
+  axios.get(this.gsheet_url).then((response) => {
+    const rows = response.data.valueRanges[0].values;
+    const currentDate = new Date();
+    const filteredRows = rows.filter(row => {
+      const dateParts = row[1].split("/");
+      const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+      return rowDate >= currentDate;
+    });
+    this.entries = filteredRows.sort((row1, row2) => {
+      const dateParts1 = row1[1].split("/");
+      const dateParts2 = row2[1].split("/");
+      const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
+      const date2 = new Date(`${dateParts2[2]}-${dateParts2[1]}-${dateParts2[0]}`);
+      return date1 - date2;
+    });
+  });
+},
+
     refreshData() {
       this.currentDate();
       this.getData();
@@ -108,6 +116,7 @@ body {
 /*Style Code for the Menu */
 .menu {
   padding: 0;
+  
 }
 
 /*Style Code for the List */
