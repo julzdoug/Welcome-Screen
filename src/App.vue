@@ -282,7 +282,7 @@ li {
   height: 30px;
 }
 .Op{
-padding-left: 10%;
+padding-left: 12%;
 }
 .Sa{
 padding-left: 10%;
