@@ -44,7 +44,7 @@ export default {
     return {
       title: "Welcome to Opportunity",
       sheet_id: "1CT_zjJp_4Sn3JKka9Gn8BihLO3Nr2XY2dLPF7mVkd0I",
-      api_token: /* "AIzaSyA-qeDXOhEeQDA0vQf7LgkF7DQtGnAtmAU", */ "AIzaSyBI2CyG50sW8iIPd1RdpsrVA_ShJ8Ox-Rg",
+      api_token: "AIzaSyBI2CyG50sW8iIPd1RdpsrVA_ShJ8Ox-Rg",
       entries: [],
     };
   },
@@ -60,16 +60,12 @@ export default {
       return date;
     },
 
-    /* This filter the data of the google Sheets per date and remove the row past the current date*/
+    // This filter the data of the google Sheets per date and remove the row past the current date*/
     getData() {
       //Version mit sortierung na aubgelaufenen Datum un daussortierung
       //Version sorted by expired date and sorted out
       //Start with the
-      //function getData()
-      //Call axios.get() with this.gsheet_url as an argument.
-      //Waiting for the answer.
-      //If the answer is successful, then
-      //set this.entries to the values ​​of the first range in response.data
+      
       axios.get(this.gsheet_url).then((response) => {
 
         // Get the lines from the API call response
@@ -156,14 +152,6 @@ body {
   margin: 0;
 }
 
-@media (min-width: 1080px) {
-  .menu {
-    padding: 0;
-    margin-bottom: 140px;
-  }
-
-}
-
 /*Style Code for the Menu */
 .menu {
   padding: 0;
@@ -197,6 +185,7 @@ li {
   color: #FFBFAB;
 }
 
+
 /* Style Code for The Footer */
 .footer {
   display: flex;
@@ -211,5 +200,86 @@ li {
 
 .footer img {
   height: 50px;
+}
+@media (max-width: 760px) {
+  #app {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 10px;
+}
+
+/*Style Code for the Title */
+h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  color: #323D4A;
+}
+
+/*Style Code for the body */
+body {
+  background-color: #E8EFF4;
+}
+
+/*Style Code for the Date */
+.date {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  color: #9AA7B1;
+  margin: 0;
+}
+
+
+
+/*Style Code for the Menu */
+.menu {
+  padding: 0;
+
+}
+
+/*Style Code for the List */
+li {
+  padding: 18px 20px;
+  margin: 20px 0;
+  background-color: #0F05A0;
+  list-style: none;
+  line-height: 0.8;
+  font-size: 8px;
+  list-style: none;
+}
+
+.Tims {
+  color: #EB5E00;
+  font-weight: 900;
+}
+
+.Task {
+  font-size: inherit;
+  margin: 0;
+  color: #FFBFAB;
+  font-weight: 900;
+}
+
+.last {
+  color: #FFBFAB;
+}
+
+/* Style Code for The Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: #FFF;
+}
+
+.footer img {
+  height: 30px;
+}
 }
 </style>
