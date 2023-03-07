@@ -1,17 +1,28 @@
 <template>
+
   <!-- staring of the HTML code that will be use on the index.html-->
   <div id="app">
+
     <!--Importing the Title from the Script Object line 33-->
     <h1>{{ title }}</h1>
+
     <!--Importing the Date from the script line 45-->
     <h2 id="date" class="date">{{ currentDate() }}</h2>
+
     <!--Importing the Data of the google sheet in certain order line 36&37-->
     <ul class="menu" v-if="entries && entries.length">
-      <dd v-for="entry in entries" :key="entry.id">
-        <span class="Tims">{{ entry[0] }} Uhr , {{ entry[1].replaceAll("/", ".") }}</span>
+
+      <!-- without componets -->
+     <!--  <li v-for="entry in entries" :key="entry.id">
+        <span class="Tims">{{ entry[0] }} Uhr , {{ entry[1].replaceAll("/", ".") }}</span><br>
         <h3 class="Task">{{ entry[2] }}</h3>
         <span class="last">{{ entry[3] }}</span>
-      </dd>
+      </li>  -->
+
+<!--With Componets -->
+      <li class="entry-item" v-for="entry in entries" :key="entry.id">
+      <EventEntry :entry="entry" />
+      </li>" 
     </ul>
     <!--Replace Text If data is empty from the Gsheet-->
     <h3 v-else>No Events at the Time available!! </h3>
@@ -26,8 +37,10 @@
 <!--Start of the script that is use to create the input-->
 <script>
 import axios from "axios";
+import EventEntry from "./components/EventEntry.vue"; 
 export default {
   name: "App",
+  components: { EventEntry }, 
   data() {
     return {
       title: "Welcome to Opportunity",
@@ -127,13 +140,14 @@ body {
 }
 
 /*Style Code for the List */
-dd {
+li {
   padding: 35px 40px;
   margin: 40px 0;
   background-color: #0F05A0;
   list-style: none;
   line-height: 1.3;
   font-size: 28px;
+  list-style: none;
 }
 
 .Tims {

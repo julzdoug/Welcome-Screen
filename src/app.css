@@ -46,7 +46,7 @@ body {
 }
 
 /*Style Code for the List */
-dd {
+li {
   padding: 35px 40px;
   margin: 40px 0;
   background-color: #0F05A0;
