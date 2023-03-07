@@ -281,6 +281,8 @@ li {
 .footer img {
   height: 30px;
 }
-
+.Se {
+  padding-right: 15%;
+}
 }
 </style>
