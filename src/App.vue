@@ -27,7 +27,7 @@
     <h3 v-else>No Events at the Time available!! </h3>
     <footer class="footer">
       <!--Logos for the Footer-->
-      <img src="./assets/STZH_SEB_Logo.png" alt="Logo of the City of Zuerich Social Department">
+      <img class="Se" src="./assets/STZH_SEB_Logo.png" alt="Logo of the City of Zuerich Social Department">
       <img class="Op" src="./assets/Opportunity.png" alt="Logo of the Oppertunity">
       <img class="Sa" src="./assets/SAG_Logo_De.png" alt="Logo Foundation SAG">
     </footer>
@@ -282,10 +282,13 @@ li {
   height: 30px;
 }
 .Op{
-padding-left: 10%;
+padding-left: 12%;
 }
 .Sa{
 padding-left: 10%;
+}
+.Se{
+  padding-right: 10%;
 }
 }
 </style>
