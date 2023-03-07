@@ -32,5 +32,6 @@ Chris Injection work on the app and create the design according to Figma
     link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
     link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
-22. added a media query for large width tha 1080px so that the last entry is fully visible
+22. added a media query for max width to 780px so that its mobile friendly
+23. had to crop the SEB logo for spacing problems.
  
