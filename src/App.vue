@@ -279,10 +279,7 @@ li {
 }
 
 .footer img {
-  height: 30px;
-}
-.Se {
-  padding-right: 35%;
+  height: 20px;
 }
 }
 </style>
