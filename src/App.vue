@@ -54,14 +54,6 @@ export default {
     },
   },
   methods: {
-    //Version mit sortierung na aubgelaufenen Datum un daussortierung
-    //Version sorted by expired date and sorted out
-    //Start with the
-    //function getData()
-    //Call axios.get() with this.gsheet_url as an argument.
-    //Waiting for the answer.
-    //If the answer is successful, then
-    //set this.entries to the values ​​of the first range in response.data
     currentDate() {
       const current = new Date();
       const date = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
@@ -70,6 +62,14 @@ export default {
 
     /* This filter the data of the google Sheets per date and remove the row past the current date*/
     getData() {
+      //Version mit sortierung na aubgelaufenen Datum un daussortierung
+      //Version sorted by expired date and sorted out
+      //Start with the
+      //function getData()
+      //Call axios.get() with this.gsheet_url as an argument.
+      //Waiting for the answer.
+      //If the answer is successful, then
+      //set this.entries to the values ​​of the first range in response.data
       axios.get(this.gsheet_url).then((response) => {
 
         // Get the lines from the API call response
@@ -78,19 +78,33 @@ export default {
         // Get the current date
         const currentDate = new Date();
 
-        // Filtere die Zeilen, die ein Datum haben, das heute oder später ist
+        // Filter the rows that have a date that is today or later
         const filteredRows = rows.filter(row => {
+
+          // Split the date into its parts
           const dateParts = row[1].split("/");
+
+          // Create a new date from the date parts
           const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+
+          // Compare the new date to the current date and return the result
           return rowDate >= currentDate;
         });
 
         // Sort the filtered rows by date
         this.entries = filteredRows.sort((row1, row2) => {
+
+          // Zerlege die Datumsteile des ersten Datums (uhr Zeit)in row1
           const dateParts1 = row1[1].split("/");
+
+          // Zerlege die Datumsteile des zweiten Datums (Kalender) in row2
           const dateParts2 = row2[1].split("/");
+
+          // Erstelle neue Datumobjekte aus den Datumsteilen beider Zeilen
           const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
           const date2 = new Date(`${dateParts2[2]}-${dateParts2[1]}-${dateParts2[0]}`);
+
+          // Vergleiche die Datumobjekte und gib das Ergebnis zurück
           return date1 - date2;
         });
       });
