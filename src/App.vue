@@ -1,5 +1,4 @@
 <template>
-
   <!-- staring of the HTML code that will be use on the index.html-->
   <div id="app">
 
@@ -13,16 +12,16 @@
     <ul class="menu" v-if="entries && entries.length">
 
       <!-- without componets -->
-     <!--  <li v-for="entry in entries" :key="entry.id">
+      <!--  <li v-for="entry in entries" :key="entry.id">
         <span class="Tims">{{ entry[0] }} Uhr , {{ entry[1].replaceAll("/", ".") }}</span><br>
         <h3 class="Task">{{ entry[2] }}</h3>
         <span class="last">{{ entry[3] }}</span>
       </li>  -->
 
-<!--With Componets -->
+      <!--With Componets -->
       <li class="entry-item" v-for="entry in entries" :key="entry.id">
-      <EventEntry :entry="entry" />
-      </li>" 
+        <EventEntry :entry="entry" />
+      </li>"
     </ul>
     <!--Replace Text If data is empty from the Gsheet-->
     <h3 v-else>No Events at the Time available!! </h3>
@@ -37,10 +36,10 @@
 <!--Start of the script that is use to create the input-->
 <script>
 import axios from "axios";
-import EventEntry from "./components/EventEntry.vue"; 
+import EventEntry from "./components/EventEntry.vue";
 export default {
   name: "App",
-  components: { EventEntry }, 
+  components: { EventEntry },
   data() {
     return {
       title: "Welcome to Opportunity",
@@ -60,25 +59,56 @@ export default {
       const date = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
       return date;
     },
-/* This filter the data of the google Sheets per date and remove the row past the current date*/
+
+    /* This filter the data of the google Sheets per date and remove the row past the current date*/
     getData() {
-  axios.get(this.gsheet_url).then((response) => {
-    const rows = response.data.valueRanges[0].values;
-    const currentDate = new Date();
-    const filteredRows = rows.filter(row => {
-      const dateParts = row[1].split("/");
-      const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
-      return rowDate >= currentDate;
-    });
-    this.entries = filteredRows.sort((row1, row2) => {
-      const dateParts1 = row1[1].split("/");
-      const dateParts2 = row2[1].split("/");
-      const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
-      const date2 = new Date(`${dateParts2[2]}-${dateParts2[1]}-${dateParts2[0]}`);
-      return date1 - date2;
-    });
-  });
-},
+      //Version mit sortierung na aubgelaufenen Datum un daussortierung
+      //Version sorted by expired date and sorted out
+      //Start with the
+      //function getData()
+      //Call axios.get() with this.gsheet_url as an argument.
+      //Waiting for the answer.
+      //If the answer is successful, then
+      //set this.entries to the values ​​of the first range in response.data
+      axios.get(this.gsheet_url).then((response) => {
+
+        // Get the lines from the API call response
+        const rows = response.data.valueRanges[0].values;
+
+        // Get the current date
+        const currentDate = new Date();
+
+        // Filter the rows that have a date that is today or later
+        const filteredRows = rows.filter(row => {
+
+          // Split the date into its parts
+          const dateParts = row[1].split("/");
+
+          // Create a new date from the date parts
+          const rowDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+
+          // Compare the new date to the current date and return the result
+          return rowDate >= currentDate;
+        });
+
+        // Sort the filtered rows by date
+        this.entries = filteredRows.sort((row1, row2) => {
+
+          // Zerlege die Datumsteile des ersten Datums (uhr Zeit)in row1
+          const dateParts1 = row1[1].split("/");
+
+          // Zerlege die Datumsteile des zweiten Datums (Kalender) in row2
+          const dateParts2 = row2[1].split("/");
+
+          // Erstelle neue Datumobjekte aus den Datumsteilen beider Zeilen
+          const date1 = new Date(`${dateParts1[2]}-${dateParts1[1]}-${dateParts1[0]}`);
+          const date2 = new Date(`${dateParts2[2]}-${dateParts2[1]}-${dateParts2[0]}`);
+
+          // Vergleiche die Datumobjekte und gib das Ergebnis zurück
+          return date1 - date2;
+        });
+      });
+    },
 
     refreshData() {
       this.currentDate();
@@ -125,6 +155,7 @@ body {
   color: #9AA7B1;
   margin: 0;
 }
+
 @media (min-width: 1080px) {
   .menu {
     padding: 0;
@@ -136,7 +167,7 @@ body {
 /*Style Code for the Menu */
 .menu {
   padding: 0;
-  
+
 }
 
 /*Style Code for the List */
@@ -180,4 +211,5 @@ li {
 
 .footer img {
   height: 50px;
-}</style>
+}
+</style>
