@@ -282,7 +282,7 @@ li {
   height: 30px;
 }
 .Se {
-  padding-right: 15%;
+  padding-right: 35%;
 }
 }
 </style>
