@@ -21,7 +21,7 @@
       <!--With Componets -->
       <li class="entry-item" v-for="entry in entries" :key="entry.id">
         <EventEntry :entry="entry" />
-      </li>"
+      </li>
     </ul>
     <!--Replace Text If data is empty from the Gsheet-->
     <h3 v-else>No Events at the Time available!! </h3>
@@ -269,7 +269,7 @@ li {
 /* Style Code for The Footer */
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-evenly;
   position: fixed;
   bottom: 0;
   left: 0;
