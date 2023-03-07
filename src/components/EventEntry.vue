@@ -1,4 +1,4 @@
-<!--Didnt work-->
+
 <template>
   <span class="Tims">{{ entry[0] }} Uhr , {{ entry[1].replaceAll("/", ".") }}</span><br>
         <h3 class="Task">{{ entry[2] }}</h3>
