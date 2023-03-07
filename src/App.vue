@@ -269,7 +269,7 @@ li {
 /* Style Code for The Footer */
 .footer {
   display: flex;
-  justify-content:space-evenly;
+  justify-content:inherit;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -281,14 +281,6 @@ li {
 .footer img {
   height: 30px;
 }
-.Op{
-padding-left: 12%;
-}
-.Sa{
-padding-left: 10%;
-}
-.Se{
-  padding-right: 10%;
-}
+
 }
 </style>
