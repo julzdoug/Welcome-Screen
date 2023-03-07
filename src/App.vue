@@ -112,6 +112,13 @@ body {
   color: #9AA7B1;
   margin: 0;
 }
+@media (min-width: 1080px) {
+  .menu {
+    padding: 0;
+    margin-bottom: 140px;
+  }
+
+}
 
 /*Style Code for the Menu */
 .menu {
