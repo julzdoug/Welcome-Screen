@@ -269,12 +269,12 @@ li {
 /* Style Code for The Footer */
 .footer {
   display: flex;
-  justify-content:inherit;
+  justify-content:space-evenly;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
+  padding: 50px;
   background: #FFF;
 }
 
