@@ -274,21 +274,13 @@ li {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px;
+  padding: 50px;
   background: #FFF;
 }
 
 .footer img {
   height: 30px;
 }
-.Op{
-padding-left: 12%;
-}
-.Sa{
-padding-left: 10%;
-}
-.Se{
-  padding-right: 10%;
-}
+
 }
 </style>
