@@ -274,7 +274,7 @@ li {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 50px;
+  padding: 5px;
   background: #FFF;
 }
 
