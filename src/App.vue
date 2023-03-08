@@ -25,6 +25,7 @@
     </ul>
     <!--Replace Text If data is empty from the Gsheet-->
     <h3 v-else>No Events at the Time available!! </h3>
+ 
     <footer class="footer">
       <!--Logos for the Footer-->
       <img class="Se" src="./assets/STZH_SEB_Logo.png" alt="Logo of the City of Zuerich Social Department">
@@ -128,6 +129,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 30px;
+
 }
 
 /*Style Code for the Title */
@@ -155,6 +157,7 @@ body {
 /*Style Code for the Menu */
 .menu {
   padding: 0;
+  
 
 }
 
@@ -167,6 +170,7 @@ li {
   line-height: 1.3;
   font-size: 28px;
   list-style: none;
+
 }
 
 .Tims {
@@ -213,7 +217,7 @@ li {
 h1 {
   font-style: normal;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 20px;
   color: #323D4A;
 }
 
@@ -226,7 +230,7 @@ body {
 .date {
   font-style: normal;
   font-weight: 300;
-  font-size: 10px;
+  font-size: 20px;
   color: #9AA7B1;
   margin: 0;
 }
@@ -246,7 +250,7 @@ li {
   background-color: #0F05A0;
   list-style: none;
   line-height: 0.8;
-  font-size: 8px;
+  font-size: 15px;
   list-style: none;
 }
 
