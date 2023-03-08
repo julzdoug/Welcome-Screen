@@ -157,9 +157,8 @@ body {
 /*Style Code for the Menu */
 .menu {
   padding: 0;
-  
-
-}
+  margin-bottom: 150px;
+  }
 
 /*Style Code for the List */
 li {
@@ -169,7 +168,7 @@ li {
   list-style: none;
   line-height: 1.3;
   font-size: 28px;
-  list-style: none;
+  
 
 }
 
@@ -200,6 +199,7 @@ li {
   width: 100%;
   padding: 40px;
   background: #FFF;
+  
 }
 
 .footer img {
@@ -240,7 +240,7 @@ body {
 /*Style Code for the Menu */
 .menu {
   padding: 0;
-
+  margin-bottom: 100px;
 }
 
 /*Style Code for the List */
